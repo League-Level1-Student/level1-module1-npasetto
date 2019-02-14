@@ -1,9 +1,10 @@
-
+import java.util.Random;
 
 public class RaceCar {
 	private String brand;
 	private int positionInRace;
 	public boolean damaged = false;
+	Random rand = new Random();
 	
 	/**
 	 * 
@@ -52,11 +53,11 @@ public class RaceCar {
 	 * Crashes the car. It falls back three positions and needs a pit stop.
 	 */
 	public void crash() {
-		positionInRace += 3;
+		positionInRace += rand.nextInt(3)+2;
 		if (positionInRace > 15) 
 			positionInRace = 15;
 		damaged = true;
-		System.out.println("\nYour car has been damaged and needs a pit stop.\nThree cars zoomed by you.");
+		System.out.println("\nYour car has been damaged and needs a pit stop.\n three cars zoomed by you.");
 	}
 	
 	/**
